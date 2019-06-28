@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+     //运算
+ function inputOne(){
+    var a = prompt('请输入:1+2+3+4+5+....+');
+    var arr = a.split('+');
+    var sum =getSumFromArray(arr);
+
+ }
+ //加法
+ function getSumFromArray(arr){
+    var sum = 0;
+          for (var i = 0; i < arr.length; i++){
+            sum += parseInt(arr[i]);
+         }
+        alert('你要计算的总和计算出来了，是：' + sum);
+ }
+// 减法
+ function getSumFrom (){
+    var b = prompt('请输入:1-2-3-4-5-....-');
+         var arr = b.split('-');
+         var sum = 0;
+         for (var i = 0; i < arr.length -1; i++){
+             sum = parseInt (arr[i] ) -arr [i+1];
+                 
+         }
+         alert('你要计算的总和计算出来了，是：' + sum);
+ }
+ //时间
+ function formatDate (){
+    var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+     if (month < 10){
+         month = '0' + month;
+     }
+     if (day < 10 ){
+         day = '0' + day;
+     }
+     if (hour < 10 ){
+         hour = '0' + hour;
+     }
+     if (minute < 10 ){
+         minute = '0' + minute;
+     }
+     if (second < 10 ){
+         second = '0' + second;
+     }
+      var time = year + '-' + month + '-' + day +'-'+ hour+'-'+ minute + '-' + second ;
+      alert('当前时间是'+ time);
+ }
+
+ function jokes (){
+    var joke = ['戴毅好骚','小浪蹄子','妖艳贱货'];
+       var r = Math.floor(Math.random()*joke.length);
+       alert(joke[r]);
+ }
+
+
+
+ 
+  for (a = 0; a >= 0; a++){
+      var msg = prompt("你好，我是传智小娜，你的语音助手~~~~~~~\n" +
+      "输入《编号》或《关键词》选择功能，输入q退出聊天\n" +
+      " 1.计算《总和》\n" +
+      " 2.获取《时间》\n" +
+      " 3.讲个《笑话》\n" +
+      " 4.表演《时间》\n"
+      );
+      //退出小娜
+   if(msg === 'q'){
+       alert('你已经不爱小娜了吗');
+       break;
+   }
+      //调用计算
+   if(msg === '1'|| msg === '总和'){
+         var numbers = prompt('请输按要求输入\n  1:加法\n  2:减法\n  3:乘法\n  4:除法');
+         if (numbers === '1' || numbers === '加法'){
+             //调用加法
+             var  sum = inputOne();
+         break;
+         }
+        
+         if (numbers === '2' || numbers === '减法'){
+             // 调用减法
+          var obb = getSumFrom();
+          break;
+         }
+   }
+   
+    if (msg === '2' || msg === '时间'){
+        //调用时间
+     var odd = formatDate();
+       break;
+    }
+
+//笑话
+   if (msg === '3' || msg === '笑话'){
+    var ooo = jokes();
+       break;
+   }else{
+       alert('您的话小娜没有听懂，请重新说一次');
+       break;
+   }
+  
+  }
+</script>
+</html>
